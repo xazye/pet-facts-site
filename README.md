@@ -28,3 +28,10 @@ export default {
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+
+# To-do
+ - get list of breeds from wiki https://en.wikipedia.org/wiki/List_of_cat_breeds
+ - use wikipedia API for info https://en.wikipedia.org/w/api.php?action=parse&page=         $Abyssinian_cat$         &format=json
+ - google custom search for images ??? 
+ - search for better alternative to google custom search for images
