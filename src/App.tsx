@@ -3,7 +3,7 @@ import { useDisclosure } from "@mantine/hooks";
 import { Header } from "./components/Header";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
-import { Main } from "./components/Main";
+import { MainContent } from "./components/MainContent";
 
 const App = (): React.ReactElement => {
   // navbar
@@ -16,7 +16,7 @@ const App = (): React.ReactElement => {
       header={{ height: { base: 60, md: 60, lg: 90 } }}
       footer={{ height: { base: 60, md: 60, lg: 90 } }}
       navbar={{
-        width: { base: 200, md: 300, lg: "0" },
+        width: { base: 0},
         breakpoint: "md",
         collapsed: { mobile: !opened },
       }}
@@ -31,7 +31,7 @@ const App = (): React.ReactElement => {
       </AppShell.Navbar>
 
       <AppShell.Main>
-        <Main />
+        <MainContent />
       </AppShell.Main>
 
       <AppShell.Footer>

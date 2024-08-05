@@ -1,8 +1,7 @@
 import {
+  Button,
   Center,
   Combobox,
-  Input,
-  InputBase,
   ScrollArea,
   SimpleGrid,
   Skeleton,
@@ -19,12 +18,16 @@ const groceries = [
   "🍫 Chocolate",
 ];
 
-const Main: React.FC = () => {
+const MainContent: React.FC = () => {
+  const [loading, setLoading] = useState(true);
+
   const combobox = useCombobox();
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState("");
   const shouldFilterOptions = !groceries.some((item) => item === value);
   const filteredOptions = shouldFilterOptions
-    ? groceries.filter((item) => item.toLowerCase().includes(value.toLowerCase().trim()))
+    ? groceries.filter((item) =>
+        item.toLowerCase().includes(value.toLowerCase().trim())
+      )
     : groceries;
 
   const options = filteredOptions.map((item) => (
@@ -36,7 +39,7 @@ const Main: React.FC = () => {
   return (
     <>
       <ScrollArea
-        h="calc(100vh - var(--app-shell-header-height, 0px) - var(--app-shell-footer-height, 0px))"
+        h="calc(100dvh - var(--app-shell-header-height, 0px) - var(--app-shell-footer-height, 0px))"
         p="md"
         type="auto"
         scrollbarSize={20}
@@ -47,12 +50,12 @@ const Main: React.FC = () => {
           // without margins or padding then change to 2 cols
           cols={{ base: 1, "1024px": 2 }}
           spacing="lg"
-          h={"70dvh"}
+          h={{ base: "80dvh", lg: "70dvh" }}
         >
           <Center
             bg="var(--mantine-color-gray-light)"
             h={"100%"}
-            w={"100%"}
+            // w={"100%"}
             style={{
               borderRadius: "10px",
             }}
@@ -62,7 +65,7 @@ const Main: React.FC = () => {
 
           <Stack
             h={"100%"}
-            bg="var(--mantine-color-gray-light)"
+            // bg="var(--mantine-color-gray-light)"
             align="stretch"
             justify="center"
             gap="md"
@@ -80,6 +83,7 @@ const Main: React.FC = () => {
               <Combobox.Target>
                 <TextInput
                   placeholder="Pick value or type anything"
+                  rightSection={<Combobox.Chevron />}
                   value={value}
                   onChange={(event) => {
                     setValue(event.currentTarget.value);
@@ -102,7 +106,12 @@ const Main: React.FC = () => {
                 </Combobox.Options>
               </Combobox.Dropdown>
             </Combobox>
-            <Skeleton key="main" w={"100%"} h={"100%"} animate={false} />
+            <Skeleton visible={loading} w={"100%"} h={"100%"} animate={false} >
+              {value}
+            </Skeleton>
+            <Button onClick={() => setLoading((l) => !l)}>
+              Toggle Skeleton
+            </Button>
           </Stack>
         </SimpleGrid>
       </ScrollArea>
@@ -110,4 +119,4 @@ const Main: React.FC = () => {
   );
 };
 
-export { Main };
+export { MainContent };
