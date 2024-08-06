@@ -31,7 +31,4 @@ export default {
 
 
 # To-do
- - get list of breeds from wiki https://en.wikipedia.org/wiki/List_of_cat_breeds
- - use wikipedia API for info https://en.wikipedia.org/w/api.php?action=parse&page=         $Abyssinian_cat$         &format=json
- - google custom search for images ??? 
  - search for better alternative to google custom search for images
