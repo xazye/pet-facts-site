@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import '@mantine/core/styles.css';
 import "./index.css";
-import { Combobox, createTheme, Input, MantineProvider, Skeleton, TextInput } from "@mantine/core";
+import { Combobox, createTheme, MantineProvider, Skeleton, TextInput } from "@mantine/core";
 import customColors from "./MantineCustomColors.tsx";
 
 const theme = createTheme({
