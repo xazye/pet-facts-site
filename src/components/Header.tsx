@@ -1,11 +1,11 @@
 import {
   Burger,
   Flex,
-  Image,
+  // Image,
   Center,
 } from "@mantine/core";
 import React from "react";
-import logo from "/logo.png";
+// import logo from "/logo.png";
 interface HeaderProps {
   opened: boolean;
   toggle: () => void;
@@ -22,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({ opened, toggle }) => {
         align="center"
       >
         <Burger onClick={toggle} opened={opened} hiddenFrom="md" size="md" />
-        <Image src={logo} h={"100%"} mx={{ base: "auto", md: "0" }} />
+        {/* <Image src={logo} h={"100%"} mx={{ base: "auto", md: "0" }} /> */}
         <Center mx={"auto"} visibleFrom="md" >
           <h1 className="text-white text-title">Pet site</h1>
           {/* {Array(3)
