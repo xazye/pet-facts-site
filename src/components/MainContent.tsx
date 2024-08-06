@@ -17,7 +17,7 @@ const MainContent: React.FC = () => {
         type="container"
         // when the containet has 1024px
         // without margins or padding then change to 2 cols
-        cols={{ base: 1, "1024px": 2 }}
+        cols={{ base: 2,'300px':1, "676px":2, "1024px": 2 }}
         spacing="lg"
         // h={{ base: "80dvh", lg: "70dvh" }}
       >
