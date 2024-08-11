@@ -110,7 +110,8 @@ const MainContentRight: React.FC<MainContentRightProps> = ({ setImage }) => {
                 combobox.openDropdown();
                 combobox.updateSelectedOptionIndex();
               }}
-              onClick={() => {
+              onClick={(e) => {
+                setValue('')
                 combobox.openDropdown();
               }}
               onFocus={() => combobox.openDropdown()}
@@ -123,12 +124,14 @@ const MainContentRight: React.FC<MainContentRightProps> = ({ setImage }) => {
               {options.length === 0 ? (
                 <Combobox.Empty>Nothing found</Combobox.Empty>
               ) : (
-                options
+                <ScrollArea scrollbarSize={20} h={{base:"40dvh", md: "60dvh"}}>
+                  {options}
+                </ScrollArea>
               )}
             </Combobox.Options>
           </Combobox.Dropdown>
         </Combobox>
-        <Button onClick={() => setSelectedBreed(value)} disabled={!value}>
+        <Button onClick={() => {setSelectedBreed(value); setImage(null)}} disabled={!value}>
           Load Details
         </Button>
         <Skeleton visible={loading} w="100%" h="100%" animate={false}>

@@ -49,14 +49,14 @@ const CatBreedDetails: React.FC<CatBreedDetailsProps> = ({ title, image }) => {
 
   return (
     <div className="text-white">
-      <h2 className="font-semibold text-title">{title}</h2>
+      <h2 className="font-semibold md:text-title">{title}</h2>
       {details && (
         <div>
           {/* <h3>{details.title}</h3> */}
           {/* {details.thumbnail && (
             image(details.thumbnail)
           )} */}
-          <p className="font-ubuntu">{details.extract}</p>
+          <p className="text-[14px] leading-[1.6] md:text-body">{details.extract}</p>
         </div>
       )}
     </div>

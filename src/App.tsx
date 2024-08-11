@@ -13,8 +13,8 @@ const App = (): React.ReactElement => {
     <AppShell
       withBorder={false}
       className="font-sans bg-background"
-      header={{ height: { base: 60, md: 60, lg: 90 } }}
-      footer={{ height: { base: 60, md: 60, lg: 90 } }}
+      header={{ height: { base: 0, md: 60, lg: 90 } }}
+      footer={{ height: { base: 0, md: 60, lg: 90 } }}
       navbar={{
         width: { base: 0},
         breakpoint: "md",
@@ -22,7 +22,7 @@ const App = (): React.ReactElement => {
       }}
       padding={0}
     >
-      <AppShell.Header>
+      <AppShell.Header visibleFrom="md">
         <Header opened={opened} toggle={toggle} />
       </AppShell.Header>
 
@@ -34,7 +34,7 @@ const App = (): React.ReactElement => {
         <MainContent />
       </AppShell.Main>
 
-      <AppShell.Footer>
+      <AppShell.Footer visibleFrom="md">
         <Footer />
       </AppShell.Footer>
       
