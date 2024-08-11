@@ -110,7 +110,7 @@ const MainContentRight: React.FC<MainContentRightProps> = ({ setImage }) => {
                 combobox.openDropdown();
                 combobox.updateSelectedOptionIndex();
               }}
-              onClick={(e) => {
+              onClick={() => {
                 setValue('')
                 combobox.openDropdown();
               }}
